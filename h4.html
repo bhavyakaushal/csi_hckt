@@ -1,0 +1,232 @@
+
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://inspirationsandcelebrations.net/wp-content/uploads/2017/09/Fall-Fashion-A-Shopping-Guide-Inspired-By-Autumnal-Colors-1140x560.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+</style>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the side navigation */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the content */
+.content {
+    margin-left: 200px;
+    padding-left: 20px;
+}
+h2{color:brown; font-style:italic;}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="6.html">Floral Dresses</a>
+  <a href="#">One Piece</a>
+  <a href="#">Jumpsuit</a>
+  <a href="#">Kurtas</a>
+  <a href="7.html">Tops</a>
+  <a href="#">Lowers</a>
+  <a href="#">Latest Trends</a>
+  <a href="#">On Sale</a><br><br><br><br><br>
+  <a href="fashion.html">Back>></a>
+</div>
+
+<div class="content">
+  <h2><br><br><i>Because we’re always looking to stay on top of the newest, coolest, weirdest and most interesting trends, we’ve already got our eyes on the style trends that’ll dominate fashion headlines in 2018.<br><br>
+Though 2017 introduced us to some cool and flirty trends ― like paper bag waist pants and couch florals ― we’re eagerly awaiting what fun and fashionable things we can look forward to seeing on clothing racks in 2018.<br><br></i></h2>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:70px">FASHION TRENDS</h1>
+    <p style="font-size:30px">Women latest trends available</p>
+    <button>LOG IN FOR MORE</button>
+  </div>
+</div>
+<br><br>
+<div style="text-align:center">
+<div class="row">
+  <div class="column">
+    <img src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Nature" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Snow" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://images.pexels.com/photos/247298/pexels-photo-247298.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="https://images.pexels.com/photos/356170/pexels-photo-356170.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Lights" style="width:100%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+
+
+<br><br><br><br><br><br>
+<h1><center>Floral Collection...</center></h1>
+<center><img src="https://i.pinimg.com/originals/07/7f/2f/077f2fe4429deb714aed47c1be58ee06.gif"height="70%" ></center><br><br><br><br><br>
+<h1><center>One Piece Collection...</center></h1>
+<center><img src="https://i.gifer.com/KCxb.gif" height="70%"></center><br><br><br><br><br>
+<h1><center>JumpSuit Collection...</center></h1>
+<center><img src="https://i.pinimg.com/originals/d8/75/e4/d875e47d1c6ee0290210942de3dc7153.gif" height="80%" width="30%"></center><br><br><br><br><br>
+<h1><center>Kurtas Collection...</center></h1>
+<center><img src="https://i.pinimg.com/originals/95/5c/97/955c97d472f6450b973d0329af77a761.gif" height="100%" width="60%"></center><br><br><br><br><br>
+<h1><center>Tops Collection...</center></h1>
+<center><img src="https://media.giphy.com/media/10ZHyr4oX1BzRm/giphy.gif"height="70%"></center><br><br><br><br><br>
+<h1><center>Lowers Collection...</center></h1>
+<center><img src="https://hips.hearstapps.com/ell.h-cdn.co/assets/16/34/1472088601-levis-favorite.gif?crop=1.0xw:1xh;center,top&resize=480:*" height="60%" ></center><br><br><br><br><br>
+<h1><center>Latest Trends...</center></h1><center><img src="https://www.fashiontrendspk.com/wp-content/uploads/Zarqash-New-Fashion-Summer-Wear-Dresses-Collection-2017-21.jpg" height="70%"></center><br><br><br><br><br>
+<h1><center>On Sale...</center></h1>
+<center><img src="https://static1.squarespace.com/static/5434fa43e4b015282b386696/t/57c6687859cc6841c523b607/1472620673015/"></center>
+
+</div>
+
+</body>
+</html>
+
+
